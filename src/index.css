@@ -4,9 +4,11 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   background: black;
   color: white;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
-    "Inter", system-ui, sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", system-ui,
+    sans-serif;
 }

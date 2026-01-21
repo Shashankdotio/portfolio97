@@ -593,7 +593,7 @@ export default function App() {
                   {/* RESUME */}
                   <Reveal delay={0.35}>
                     <a
-                      href="resume.pdf"
+                      href="/resume.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
                       style={contactItem}

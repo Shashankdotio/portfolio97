@@ -187,7 +187,7 @@ export default function App() {
               Shashank Kamble
             </h1>
             <p style={heroSubtitle}>
-              Building intelligent systems with data & code.
+              Building intelligent systems with data and code.
             </p>
           </div>
         </section>

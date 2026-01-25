@@ -68,9 +68,10 @@ function HeroObject({ scrollY, smoothScroll }) {
   useFrame(() => {
     if (!mesh.current) return;
     // Apple-style smoothing
-    smoothScroll.current += (scrollY - smoothScroll.current) * 0.08;
+    const ease = isMobile ? 0.14 : 0.1;
+    smoothScroll.current += (scrollY - smoothScroll.current) * ease;
 
-    const speed = isMobile ? 0.00028 : 0.00045;
+    const speed = isMobile ? 0.00032 : 0.0005;
     const t = smoothScroll.current * speed;
 
     mesh.current.rotation.y +=

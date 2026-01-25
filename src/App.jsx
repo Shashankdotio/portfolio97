@@ -92,8 +92,8 @@ function HeroObject({ scrollY, smoothScroll }) {
     <TorusKnot ref={mesh} args={[1.4, 0.45, 120, 16]}>
       <meshStandardMaterial
       color={isMobile ? "#e5e7eb" : "#d1d1d6"}
-      roughness={isMobile ? 0.22 : 0.3}
-      metalness={isMobile ? 0.85 : 0.9}
+      roughness={isMobile ? 0.22 : 0.22}
+      metalness={isMobile ? 0.85 : 0.95}
       />
     </TorusKnot>
   );
@@ -965,6 +965,6 @@ const photoCaption = {
 const blurWrapper = {
   backdropFilter: isMobile ? "blur(8px)" : "blur(12px)",
   background: isMobile
-    ? "rgba(0,0,0,0.18)"
+    ? "rgba(0,0,0,0.3)"
     : "rgba(0,0,0,0.35)",
 };

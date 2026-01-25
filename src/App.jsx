@@ -93,7 +93,7 @@ function HeroObject({ scrollY, smoothScroll }) {
       <meshStandardMaterial
       color={isMobile ? "#e5e7eb" : "#d1d1d6"}
       roughness={isMobile ? 0.22 : 0.3}
-      metalness={isMobile ? 0.95 : 0.9}
+      metalness={isMobile ? 0.8 : 0.9}
       />
     </TorusKnot>
   );

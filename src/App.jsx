@@ -62,13 +62,16 @@ function HoverCard({ children, style }) {
 }
 
 /* ================= HERO OBJECT ================= */
-function HeroObject({ scrollY }) {
+function HeroObject({ scrollY, smoothScroll }) {
   const mesh = useRef(null);
 
   useFrame(() => {
     if (!mesh.current) return;
+    // Apple-style smoothing
+    smoothScroll.current += (scrollY - smoothScroll.current) * 0.08;
+
     const speed = isMobile ? 0.00028 : 0.00045;
-    const t = scrollY * speed;
+    const t = smoothScroll.current * speed;
 
     mesh.current.rotation.y +=
       (t * Math.PI * 1.1 - mesh.current.rotation.y) * 0.042;
@@ -86,7 +89,11 @@ function HeroObject({ scrollY }) {
 
   return (
     <TorusKnot ref={mesh} args={[1.4, 0.45, 120, 16]}>
-      <meshStandardMaterial color="#d1d1d6" roughness={0.3} metalness={0.9} />
+      <meshStandardMaterial
+      color="#d1d1d6"
+      roughness={isMobile ? 0.25 : 0.3}
+      metalness={isMobile ? 0.95 : 0.9}
+    />
     </TorusKnot>
   );
 }
@@ -145,6 +152,7 @@ function TiltPhoto({ src, alt }) {
 /* ================= APP ================= */
 export default function App() {
   const [scrollY, setScrollY] = useState(0);
+  const smoothScroll = useRef(0);
   const [showMoreExperience, setShowMoreExperience] = useState(false);
 
   useEffect(() => {
@@ -164,13 +172,21 @@ export default function App() {
           inset: 0,
           zIndex: 0,
           pointerEvents: "none",
-          opacity: isMobile ? 0.65 : 1,
+          opacity: 1,
         }}
       >
-        <ambientLight intensity={0.4} />
-        <directionalLight position={[6, 4, 4]} intensity={1.1} />
-        <directionalLight position={[-4, -2, -6]} intensity={0.5} />
-        <HeroObject scrollY={scrollY} />
+        <ambientLight intensity={isMobile ? 0.7 : 0.4} />
+
+        <directionalLight
+          position={[6, 4, 4]}
+          intensity={isMobile ? 1.4 : 1.1}
+        />
+
+        <directionalLight
+          position={[-4, -2, -6]}
+          intensity={isMobile ? 0.7 : 0.5}
+        />
+        <HeroObject scrollY={scrollY} smoothScroll={smoothScroll} />
       </Canvas>
 
       {/* CONTENT */}
@@ -946,6 +962,8 @@ const photoCaption = {
 
 //blur wrapper
 const blurWrapper = {
-  backdropFilter: "blur(12px)",
-  background: "rgba(0,0,0,0.35)",
+  backdropFilter: isMobile ? "blur(8px)" : "blur(12px)",
+  background: isMobile
+    ? "rgba(0,0,0,0.22)"
+    : "rgba(0,0,0,0.35)",
 };

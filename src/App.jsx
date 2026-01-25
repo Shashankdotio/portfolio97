@@ -90,10 +90,10 @@ function HeroObject({ scrollY, smoothScroll }) {
   return (
     <TorusKnot ref={mesh} args={[1.4, 0.45, 120, 16]}>
       <meshStandardMaterial
-      color="#d1d1d6"
-      roughness={isMobile ? 0.25 : 0.3}
-      metalness={isMobile ? 0.95 : 0.9}
-    />
+      color={isMobile ? "#e5e7eb" : "#d1d1d6"}
+      roughness={isMobile ? 0.22 : 0.3}
+      metalness={isMobile ? 0.85 : 0.9}
+      />
     </TorusKnot>
   );
 }
@@ -175,16 +175,16 @@ export default function App() {
           opacity: 1,
         }}
       >
-        <ambientLight intensity={isMobile ? 0.7 : 0.4} />
+        <ambientLight intensity={isMobile ? 0.9 : 0.45} />
 
         <directionalLight
           position={[6, 4, 4]}
-          intensity={isMobile ? 1.4 : 1.1}
+          intensity={isMobile ? 1.2 : 1.1}
         />
 
         <directionalLight
           position={[-4, -2, -6]}
-          intensity={isMobile ? 0.7 : 0.5}
+          intensity={isMobile ? 0.6 : 0.5}
         />
         <HeroObject scrollY={scrollY} smoothScroll={smoothScroll} />
       </Canvas>
@@ -964,6 +964,6 @@ const photoCaption = {
 const blurWrapper = {
   backdropFilter: isMobile ? "blur(8px)" : "blur(12px)",
   background: isMobile
-    ? "rgba(0,0,0,0.22)"
+    ? "rgba(0,0,0,0.18)"
     : "rgba(0,0,0,0.35)",
 };

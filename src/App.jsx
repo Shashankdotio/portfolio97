@@ -227,7 +227,7 @@ export default function App() {
                       works.
                     </p>
                     <p style={bodyText}>
-                      Outside of tech, I also spend time on creative work —
+                      Outside of tech, I also spend time on creative work like
                       graphic design, editing, and cinematography.
                     </p>
                   </div>

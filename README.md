@@ -57,8 +57,16 @@ npm run build
 
 ---
 
-## Contact
+<h2 align="center">📬 Doubts? Let's Connect</h2>
 
-- LinkedIn: https://linkedin.com/in/shashankkamble97  
-- GitHub: https://github.com/Shashankdotio  
-- Email: shashankvsdb@gmail.com
+<p align="center">
+  <a href="https://www.linkedin.com/in/shashankkamble97">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+  <a href="mailto:shashankvsdb@gmail.com">
+    <img src="https://img.shields.io/badge/Email-111111?style=for-the-badge&logo=gmail&logoColor=white" />
+  </a>
+  <a href="https://github.com/Shashankdotio">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+</p>

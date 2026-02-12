@@ -1,4 +1,4 @@
-# Shashank Kamble — Portfolio
+# Portfolio
 
 This is my personal portfolio website built with React and Three.js.  
 It focuses on clean design, subtle motion, and a scroll-driven 3D hero element.
@@ -18,13 +18,13 @@ Live: https://shashank-kamble.vercel.app
 
 ## What’s Inside
 
-- Scroll-controlled 3D TorusKnot hero  
+- Scroll-controlled 3D TorusKnot as hero element
 - Custom lighting and material tuning (desktop & mobile)  
 - Smooth reveal animations using IntersectionObserver  
 - Interactive hover cards  
 - Responsive layout with mobile-specific adjustments  
 
-The goal wasn’t to make something flashy — just something intentional, smooth, and well-balanced.
+The goal wasn’t to make something flashy. Just something minimal, smooth, and to-the-point.
 
 ---
 

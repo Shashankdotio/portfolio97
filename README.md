@@ -1,16 +1,64 @@
-# React + Vite
+# Shashank Kamble — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my personal portfolio website built with React and Three.js.  
+It focuses on clean design, subtle motion, and a scroll-driven 3D hero element.
 
-Currently, two official plugins are available:
+Live: https://shashank-kamble.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React  
+- Vite  
+- Three.js (via @react-three/fiber & @react-three/drei)  
+- Vercel (deployment)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## What’s Inside
+
+- Scroll-controlled 3D TorusKnot hero  
+- Custom lighting and material tuning (desktop & mobile)  
+- Smooth reveal animations using IntersectionObserver  
+- Interactive hover cards  
+- Responsive layout with mobile-specific adjustments  
+
+The goal wasn’t to make something flashy — just something intentional, smooth, and well-balanced.
+
+---
+
+## Run Locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Shashankdotio/portfolio97.git
+cd portfolio97
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start development server:
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+---
+
+## Contact
+
+- LinkedIn: https://linkedin.com/in/shashankkamble97  
+- GitHub: https://github.com/Shashankdotio  
+- Email: shashankvsdb@gmail.com

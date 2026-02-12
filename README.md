@@ -1,4 +1,4 @@
-# Portfolio
+# Portfolio-website
 
 This is my personal portfolio website built with React and Three.js.  
 It focuses on clean design, subtle motion, and a scroll-driven 3D hero element.

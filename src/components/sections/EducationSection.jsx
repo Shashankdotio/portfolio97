@@ -25,17 +25,22 @@ function EducationCard({ edu, isActive, onSelect }) {
 
   return (
     <Reveal delay={edu.delay}>
-      <button
+      <div
         onClick={() => onSelect(edu)}
         style={{
-          appearance: "none",
           background: "transparent",
-          border: 0,
           color: "inherit",
           cursor: "pointer",
-          padding: 0,
           textAlign: "left",
           width: "100%",
+        }}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            onSelect(edu);
+          }
         }}
         aria-pressed={isActive}
       >
@@ -46,24 +51,31 @@ function EducationCard({ edu, isActive, onSelect }) {
             <p style={{ fontSize: "0.95rem", opacity: 0.7 }}>{edu.focus}</p>
           )}
           <p style={{ fontSize: "0.9rem", opacity: 0.6 }}>{edu.period}</p>
-          <p
+          <button
             style={{
+              appearance: "none",
+              background: "transparent",
+              border: 0,
+              color: "inherit",
+              cursor: "pointer",
               fontSize: "0.8rem",
               opacity: 0.5,
               marginTop: "1rem",
+              padding: 0,
               fontStyle: "italic",
             }}
+            tabIndex={-1}
           >
             Click to explore my journey
-          </p>
+          </button>
         </HoverCard>
-      </button>
+      </div>
     </Reveal>
   );
 }
 
 export function EducationSection() {
-  const [selectedEducation, setSelectedEducation] = useState(educationData[0]);
+  const [selectedEducation, setSelectedEducation] = useState(null);
 
   return (
     <section style={sectionTight}>

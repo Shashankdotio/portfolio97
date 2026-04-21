@@ -44,34 +44,34 @@ export const skillsData = [
 
 export const educationData = [
   {
-    title: "Master's in Information Technology & Analytics",
+    title: "Master's - Information Technology & Analytics",
     school: "Rutgers University, New Jersey",
     focus: "Concentration: Artificial Intelligence",
     period: "2025 – Present",
     link: "https://www.business.rutgers.edu/masters-information-technology-analytics",
     delay: 0.1,
     image: "/education/rutgers.jpg",
-    memory: "My journey at Rutgers started with a fascination for AI and data. The coursework challenged me to think differently about machine learning. Working on projects with cutting-edge tools like PyTorch expanded my perspective on what's possible. The collaborative environment with fellow researchers pushed me to dig deeper into complex problems.",
+    memory: "Coming to Rutgers was a big shift for me. New country, new people, and a completely different environment. It felt overwhelming at first, but also exciting in a way I hadn’t experienced before. Being around people from so many different backgrounds and working on new kinds of problems pushed me out of my comfort zone. At the same time, I’ve been getting deeper into data and machine learning, building things, experimenting, and slowly figuring out how everything fits together.",
   },
   {
-    title: "B.E. in Computer Science",
+    title: "B.E. - Computer Science",
     school: "St. Francis Institute of Technology, Mumbai University",
     focus: "Honors in Cyber Security",
     period: "CGPA: 8.57 / 10 · 2021 – 2025",
     link: "https://www.sfit.ac.in/",
     delay: 0.25,
     image: "/education/sfit.jpg",
-    memory: "My four years at SFIT were transformative. I discovered my passion for cybersecurity and data science through hands-on projects. From coding marathons to hackathons, every challenge taught me something new. The 8.57 CGPA achievement came from consistent hard work and mentorship from amazing professors who believed in my potential.",
+    memory: "These years were full of late nights, group projects, and a lot of trial and error. I started building real things, exploring data, and getting genuinely interested in how systems learn and make decisions. This is where my interest in machine learning and analytics really began to take shape.",
   },
   {
-    title: "High School",
+    title: "High School - Science",
     school: "Don Bosco High School, Mumbai",
     focus: null,
     period: "Percentage: 86.20% · 2014 - 2019",
     link: "https://donboscoborivli.org",
     delay: 0.4,
     image: "/education/donbosco.jpg",
-    memory: "High school was where it all began. While maintaining an 86.20% average, I developed a strong foundation in mathematics and computer science. The discipline and values instilled here shaped my approach to learning. These years taught me that consistency and curiosity are the foundation of success.",
+    memory: "High school was where it all began. Uniforms, early mornings, and figuring out life one exam at a time. Somewhere between math classes and Football sessions, I realized I enjoyed solving problems more than memorizing answers.",
   },
 ];
 

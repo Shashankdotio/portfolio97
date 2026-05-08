@@ -88,14 +88,20 @@ export const tiltImage = {
 /* ================= SKILLS STYLES ================= */
 export const skillsGrid = {
   display: "grid",
-  gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-  gap: "3rem",
+  gridTemplateColumns: isMobileLayout
+    ? "1fr"
+    : "repeat(auto-fit, minmax(280px, 1fr))",
+  gap: "2rem",
+  alignItems: "stretch",
 };
 
 export const skillCard = {
   background: "rgba(255,255,255,0.08)",
   borderRadius: "20px",
   padding: "2rem",
+  minHeight: "100%",
+  display: "flex",
+  flexDirection: "column",
 };
 
 export const skillTitle = { fontSize: "1.35rem", marginBottom: "1rem" };
@@ -107,6 +113,8 @@ export const skillList = {
   fontSize: "0.95rem",
   lineHeight: 1.7,
   opacity: 0.85,
+  display: "grid",
+  gap: "0.55rem",
 };
 
 /* ================= TIMELINE/EDUCATION STYLES ================= */
@@ -180,6 +188,32 @@ export const secondaryEducationCard = {
 export const activeEducationCard = {
   background: "rgba(255,255,255,0.14)",
   border: "1px solid rgba(255,255,255,0.22)",
+};
+
+export const educationHint = {
+  position: "absolute",
+  left: isMobileLayout ? "0.25rem" : "calc(100% + 1rem)",
+  top: isMobileLayout ? "calc(100% + 0.75rem)" : "50%",
+  transform: isMobileLayout ? "none" : "translateY(-50%)",
+  display: "inline-flex",
+  alignItems: "center",
+  gap: "0.45rem",
+  fontSize: "0.78rem",
+  opacity: 0,
+  color: "rgba(255,255,255,0.86)",
+  whiteSpace: "nowrap",
+  pointerEvents: "none",
+  animation: isMobileLayout
+    ? "educationHintFloatMobile 4.5s ease-in-out forwards"
+    : "educationHintFloat 4.5s ease-in-out forwards",
+  fontWeight: "500",
+  background: "rgba(255,255,255,0.1)",
+  border: "1px solid rgba(255,255,255,0.18)",
+  padding: "0.45rem 0.8rem",
+  borderRadius: "999px",
+  backdropFilter: "blur(10px)",
+  boxShadow: "0 10px 30px rgba(0,0,0,0.25)",
+  zIndex: 2,
 };
 
 /* ================= EXPANDED EDUCATION MODAL STYLES ================= */
@@ -291,6 +325,9 @@ export const featuredExperienceCard = {
   background: "rgba(255,255,255,0.08)",
   borderRadius: "24px",
   padding: "2rem",
+  minHeight: "320px",
+  display: "flex",
+  flexDirection: "column",
 };
 
 export const experienceList = {
@@ -312,12 +349,16 @@ export const secondaryExperienceGrid = {
   display: "grid",
   gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
   gap: "2rem",
+  alignItems: "stretch",
 };
 
 export const secondaryExperienceCard = {
   background: "rgba(255,255,255,0.05)",
   borderRadius: "20px",
   padding: "1.8rem",
+  minHeight: "100%",
+  display: "flex",
+  flexDirection: "column",
 };
 
 /* ================= PROJECTS STYLES ================= */
@@ -350,6 +391,10 @@ export const featuredProjectCard = {
   background: "rgba(255,255,255,0.1)",
   borderRadius: "28px",
   padding: "3rem",
+  minHeight: "240px",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
 };
 
 export const featuredProjectDesc = {
@@ -363,12 +408,16 @@ export const projectsGridAlt = {
   gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
   gap: "2.5rem",
   marginTop: "4rem",
+  alignItems: "stretch",
 };
 
 export const projectCardAlt = {
   background: "rgba(255,255,255,0.06)",
   borderRadius: "20px",
   padding: "2rem",
+  minHeight: "100%",
+  display: "flex",
+  flexDirection: "column",
 };
 
 export const projectDescAlt = {
@@ -454,4 +503,118 @@ export const blurWrapper = {
   background: isMobile
     ? "rgba(0,0,0,0.3)"
     : "rgba(0,0,0,0.35)",
+};
+
+/* ================= FLOATING PROMPT STYLES ================= */
+export const floatingPrompt = {
+  position: "absolute",
+  bottom: "-3.5rem",
+  left: "50%",
+  transform: "translateX(-50%)",
+  fontSize: "0.8rem",
+  opacity: 0,
+  color: "#fff",
+  whiteSpace: "nowrap",
+  pointerEvents: "none",
+  animation: "floatFade 3s ease-in-out forwards",
+  fontWeight: "500",
+  background: "rgba(255,255,255,0.15)",
+  border: "1px solid rgba(255,255,255,0.3)",
+  padding: "0.5rem 1rem",
+  borderRadius: "20px",
+  backdropFilter: "blur(10px)",
+  boxShadow: "0 8px 32px rgba(0,0,0,0.3)",
+};
+
+/* ================= CERTIFICATIONS STYLES ================= */
+export const certificationsGrid = {
+  display: "grid",
+  gridTemplateColumns: isMobileLayout
+    ? "1fr"
+    : "repeat(auto-fit, minmax(320px, 1fr))",
+  gap: "2.5rem",
+  marginTop: "4rem",
+};
+
+export const certificationCard = {
+  position: "relative",
+  background: "rgba(255,255,255,0.08)",
+  borderRadius: "24px",
+  overflow: "hidden",
+  border: "1px solid rgba(255,255,255,0.1)",
+  transition: "all 0.3s cubic-bezier(.2,.8,.2,1)",
+  cursor: "pointer",
+  height: "100%",
+  display: "flex",
+  flexDirection: "column",
+};
+
+export const certificationImageWrapper = {
+  width: "100%",
+  height: "220px",
+  overflow: "hidden",
+  borderBottom: "1px solid rgba(255,255,255,0.1)",
+};
+
+export const certificationImage = {
+  width: "100%",
+  height: "100%",
+  objectFit: "cover",
+  transition: "transform 0.3s ease",
+};
+
+export const certificationContent = {
+  padding: "1.8rem",
+  flex: 1,
+  display: "flex",
+  flexDirection: "column",
+};
+
+export const certificationTitle = {
+  fontSize: "1.15rem",
+  fontWeight: "500",
+  marginBottom: "0.4rem",
+  letterSpacing: "-0.01em",
+};
+
+export const certificationProvider = {
+  fontSize: "0.85rem",
+  opacity: 0.6,
+  marginBottom: "0.8rem",
+  textTransform: "uppercase",
+  letterSpacing: "0.05em",
+};
+
+export const certificationDescription = {
+  fontSize: "0.9rem",
+  lineHeight: 1.6,
+  opacity: 0.75,
+  marginBottom: "1rem",
+  flex: 1,
+};
+
+export const certificationSkills = {
+  display: "flex",
+  flexWrap: "wrap",
+  gap: "0.5rem",
+  marginTop: "auto",
+};
+
+export const skillTag = {
+  fontSize: "0.75rem",
+  padding: "0.35rem 0.75rem",
+  background: "rgba(255,255,255,0.1)",
+  borderRadius: "12px",
+  opacity: 0.7,
+  border: "1px solid rgba(255,255,255,0.15)",
+};
+
+export const certificationSectionContainer = {
+  padding: isMobile ? "18vh 8vw" : "15vh 12vw",
+  background: "transparent",
+};
+
+export const certificationsContainer = {
+  maxWidth: "1200px",
+  margin: "0 auto",
 };

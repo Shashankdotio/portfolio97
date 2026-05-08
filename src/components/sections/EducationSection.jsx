@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Reveal } from "../common/Reveal";
 import { HoverCard } from "../common/HoverCard";
 import { ExpandedEducationModal } from "./ExpandedEducationModal";
@@ -14,9 +14,10 @@ import {
   timelineCard,
   secondaryEducationCard,
   activeEducationCard,
+  educationHint,
 } from "../../styles/styles";
 
-function EducationCard({ edu, isActive, onSelect }) {
+function EducationCard({ edu, isActive, onSelect, showHint }) {
   const isSecondary = !edu.focus;
   const baseCardStyle = isSecondary ? secondaryEducationCard : timelineCard;
   const cardStyle = isActive
@@ -26,49 +27,63 @@ function EducationCard({ edu, isActive, onSelect }) {
   return (
     <Reveal delay={edu.delay}>
       <div
-        onClick={() => onSelect(edu)}
         style={{
-          background: "transparent",
-          color: "inherit",
-          cursor: "pointer",
-          textAlign: "left",
+          position: "relative",
           width: "100%",
         }}
-        role="button"
-        tabIndex={0}
-        onKeyDown={(event) => {
-          if (event.key === "Enter" || event.key === " ") {
-            event.preventDefault();
-            onSelect(edu);
-          }
-        }}
-        aria-pressed={isActive}
       >
-        <HoverCard style={cardStyle}>
-          <h3>{edu.title}</h3>
-          <p style={{ opacity: 0.85 }}>{edu.school}</p>
-          {edu.focus && (
-            <p style={{ fontSize: "0.95rem", opacity: 0.7 }}>{edu.focus}</p>
-          )}
-          <p style={{ fontSize: "0.9rem", opacity: 0.6 }}>{edu.period}</p>
-          <button
-            style={{
-              appearance: "none",
-              background: "transparent",
-              border: 0,
-              color: "inherit",
-              cursor: "pointer",
-              fontSize: "0.8rem",
-              opacity: 0.5,
-              marginTop: "1rem",
-              padding: 0,
-              fontStyle: "italic",
-            }}
-            tabIndex={-1}
-          >
-            Click to explore my journey
-          </button>
-        </HoverCard>
+        <div
+          onClick={() => onSelect(edu)}
+          style={{
+            background: "transparent",
+            color: "inherit",
+            cursor: "pointer",
+            textAlign: "left",
+            width: "100%",
+          }}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              onSelect(edu);
+            }
+          }}
+          aria-pressed={isActive}
+        >
+          <HoverCard style={cardStyle}>
+            <h3>{edu.title}</h3>
+            <p style={{ opacity: 0.85 }}>{edu.school}</p>
+            {edu.focus && (
+              <p style={{ fontSize: "0.95rem", opacity: 0.7 }}>{edu.focus}</p>
+            )}
+            <p style={{ fontSize: "0.9rem", opacity: 0.6 }}>{edu.period}</p>
+            <button
+              style={{
+                appearance: "none",
+                background: "transparent",
+                border: 0,
+                color: "inherit",
+                cursor: "pointer",
+                fontSize: "0.8rem",
+                opacity: 0.5,
+                marginTop: "1rem",
+                padding: 0,
+                fontStyle: "italic",
+              }}
+              tabIndex={-1}
+            >
+              Click to explore my journey
+            </button>
+          </HoverCard>
+        </div>
+
+        {showHint && !isActive && (
+          <div style={educationHint}>
+            <span style={{ fontSize: "1rem" }}>☞</span>
+            <span>Click to expand and explore my journey</span>
+          </div>
+        )}
       </div>
     </Reveal>
   );
@@ -76,6 +91,22 @@ function EducationCard({ edu, isActive, onSelect }) {
 
 export function EducationSection() {
   const [selectedEducation, setSelectedEducation] = useState(null);
+  const [showHint, setShowHint] = useState(true);
+
+  useEffect(() => {
+    const timeoutId = window.setTimeout(() => {
+      setShowHint(false);
+    }, 4500);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
+  }, []);
+
+  const handleSelectEducation = (edu) => {
+    setShowHint(false);
+    setSelectedEducation(edu);
+  };
 
   return (
     <section style={sectionTight}>
@@ -92,7 +123,8 @@ export function EducationSection() {
                 key={edu.title}
                 edu={edu}
                 isActive={selectedEducation?.title === edu.title}
-                onSelect={setSelectedEducation}
+                onSelect={handleSelectEducation}
+                showHint={showHint}
               />
             ))}
           </div>

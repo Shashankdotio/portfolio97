@@ -19,7 +19,15 @@ function SecondaryExperienceItem({ exp, delay }) {
         <h4>{exp.title}</h4>
         <p style={{ opacity: 0.8 }}>{exp.org}</p>
         <p style={{ fontSize: "0.9rem", opacity: 0.6 }}>{exp.period}</p>
-        <ul style={{ marginTop: "1rem", lineHeight: 1.7, opacity: 0.8 }}>
+        <ul
+          style={{
+            marginTop: "1rem",
+            lineHeight: 1.7,
+            opacity: 0.8,
+            paddingLeft: "1.1rem",
+            flex: 1,
+          }}
+        >
           {exp.items.map((item) => (
             <li key={item}>{item}</li>
           ))}

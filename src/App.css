@@ -55,6 +55,15 @@
   }
 }
 
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 @keyframes scaleIn {
   from {
     opacity: 0;
@@ -65,3 +74,96 @@
     transform: scale(1);
   }
 }
+
+/* ================= FLOATING PROMPT ANIMATION ================= */
+@keyframes floatFade {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(0);
+  }
+  10% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+/* ================= PULSE ANIMATION ================= */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: translateY(-50%) scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(-50%) scale(1.1);
+  }
+}
+
+@keyframes educationHintFloat {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-10px);
+  }
+  12% {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+  78% {
+    opacity: 1;
+    transform: translateY(-50%) translateX(6px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50%) translateX(12px);
+  }
+}
+
+@keyframes educationHintFloatMobile {
+  0% {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  12% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  78% {
+    opacity: 1;
+    transform: translateY(4px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+/* ================= CERTIFICATE EXPAND ANIMATION ================= */
+@keyframes certExpand {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ================= CERTIFICATE MINIMIZE ANIMATION ================= */
+@keyframes certMinimize {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+}
+

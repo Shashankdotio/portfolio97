@@ -7,6 +7,7 @@ import { FocusAreasSection } from "./components/sections/FocusAreasSection";
 import { EducationSection } from "./components/sections/EducationSection";
 import { ExperienceSection } from "./components/sections/ExperienceSection";
 import { ProjectsSection } from "./components/sections/ProjectsSection";
+import { CertificationsSection } from "./components/sections/CertificationsSection";
 import { ContactSection } from "./components/sections/ContactSection";
 import { blurWrapper } from "./styles/styles";
 import { isMobile } from "./constants/config";
@@ -57,6 +58,7 @@ export default function App() {
           <EducationSection />
           <ExperienceSection />
           <ProjectsSection />
+          <CertificationsSection />
           <ContactSection />
         </div>
       </div>

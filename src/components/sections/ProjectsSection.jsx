@@ -24,7 +24,7 @@ export function ProjectsSection() {
           href={projectsData.featured.link}
           target="_blank"
           rel="noopener noreferrer"
-          style={{ textDecoration: "none", color: "inherit" }}
+          style={{ textDecoration: "none", color: "inherit", display: "block" }}
         >
           <HoverCard style={featuredProjectCard}>
             <h3 style={{ fontSize: "1.6rem", marginBottom: "0.6rem" }}>
@@ -43,7 +43,12 @@ export function ProjectsSection() {
               href={proj.link}
               target="_blank"
               rel="noopener noreferrer"
-              style={{ textDecoration: "none", color: "inherit" }}
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+                display: "block",
+                height: "100%",
+              }}
             >
               <HoverCard style={projectCardAlt}>
                 <h4 style={{ marginBottom: "0.4rem" }}>{proj.title}</h4>

@@ -87,7 +87,7 @@ export const educationData = [
     memory: "These years were full of late nights, group projects, and a lot of trial and error. I started building real things, exploring data, and getting genuinely interested in how systems learn and make decisions. This is where my interest in machine learning and analytics really began to take shape.",
   },
   {
-    title: "High School - Science",
+    title: "High School",
     school: "Don Bosco High School, Mumbai",
     focus: null,
     period: "Percentage: 86.20% · 2014 - 2019",
@@ -100,24 +100,25 @@ export const educationData = [
 
 export const experienceData = {
   featured: {
-    title: "Data Science Intern",
-    org: "Applied Research · Government of India (AIR)",
+    title: "Research & Programming Intern",
+    org: "R&D · Government of India (AIR)",
     period: "Summer 2024",
     items: [
-      "Worked with real-world datasets to support applied research initiatives.",
-      "Built and evaluated machine learning models for data-driven analysis.",
-      "Performed feature engineering and exploratory analysis to improve model performance.",
-      "Collaborated with researchers to translate problem statements into analytical workflows.",
+      "Analyzed broadcast and audience datasets to identify listener engagement and programming trends using Python and Excel.",
+      "Performed data cleaning, preprocessing, and exploratory analysis on structured operational datasets.",
+      "Built reporting workflows and dashboards to summarize audience insights and programming metrics.",
+      "Processed broadcast metadata and operational records to support scheduling and content analysis.",
     ],
   },
   secondary: [
     {
-      title: "Machine Learning Intern",
+      title: "Data Analysis Intern",
       org: "CodSoft",
       period: "Project-based internship",
       items: [
-        "Implemented ML models on curated datasets.",
-        "Worked on data preprocessing and evaluation.",
+        "Built dashboards and visual reports to analyze trends across structured datasets using Python and BI tools.",
+        "Performed data cleaning, preprocessing, and exploratory analysis to improve reporting accuracy.",
+        "Worked with KPI-based reports and data visualizations to support decision-making and trend analysis.",
       ],
     },
     {
@@ -261,7 +262,7 @@ export const contactData = {
       delay: 0.25,
     },
     {
-      label: "Resume (Technical)",
+      label: "Resume",
       value: "Download PDF",
       href: "/resume.pdf",
       delay: 0.35,

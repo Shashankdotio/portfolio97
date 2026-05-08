@@ -111,7 +111,7 @@ export function EducationSection() {
   return (
     <section style={sectionTight}>
       <Reveal>
-        <h2 style={sectionTitle}>Education</h2>
+        <h2 style={sectionTitle}>Through the Years</h2>
       </Reveal>
 
       <div style={educationLayout}>

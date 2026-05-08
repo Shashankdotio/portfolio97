@@ -43,7 +43,7 @@ export function ExperienceSection() {
   return (
     <section style={sectionTight}>
       <Reveal>
-        <h2 style={sectionTitle}>Experience</h2>
+        <h2 style={sectionTitle}>Work Journey</h2>
       </Reveal>
 
       {/* FEATURED EXPERIENCE */}

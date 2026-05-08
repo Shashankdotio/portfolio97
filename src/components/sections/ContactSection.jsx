@@ -32,13 +32,12 @@ export function ContactSection() {
         {/* LEFT: TEXT + LINKS */}
         <div>
           <Reveal>
-            <h2 style={sectionTitle}>Contact</h2>
+            <h2 style={sectionTitle}>Let's Talk</h2>
           </Reveal>
 
           <Reveal delay={0.1}>
             <p style={contactText}>
-              If you'd like to talk about data, machine learning, or
-              potential opportunities, feel free to reach out.
+              If something here resonated with you, whether it’s a project, an idea, or an opportunity, I’d love to hear from you.
             </p>
           </Reveal>
 

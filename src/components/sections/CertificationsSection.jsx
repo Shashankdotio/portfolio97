@@ -92,7 +92,7 @@ export function CertificationsSection() {
   return (
     <section style={sectionTight}>
       <Reveal>
-        <h2 style={sectionTitle}>Certifications & Achievements</h2>
+        <h2 style={sectionTitle}>Certifications</h2>
       </Reveal>
 
       {featured.length > 0 && (

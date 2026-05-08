@@ -15,7 +15,7 @@ export function ProjectsSection() {
   return (
     <section style={projectsSection}>
       <Reveal>
-        <h2 style={sectionTitle}>Featured Work</h2>
+        <h2 style={sectionTitle}>Things I’ve Built</h2>
       </Reveal>
 
       {/* FEATURED PROJECT */}

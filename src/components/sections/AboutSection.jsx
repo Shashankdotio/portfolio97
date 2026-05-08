@@ -16,18 +16,15 @@ export function AboutSection() {
           <div style={aboutLayout}>
             <img src="me.png" alt="Portrait" style={aboutImage} />
             <div>
-              <h2 style={sectionTitle}>About</h2>
+              <h2 style={sectionTitle}>About me</h2>
               <p style={bodyText}>
-                I work with data and machine learning, often on problems
-                where the answers aren't obvious.
+                A lot of my time goes into data, machine learning, and trying to figure out why my code worked yesterday but not today.
               </p>
               <p style={bodyText}>
-                I like understanding why something works, not just that it
-                works.
+                I enjoy solving problems, especially the kind where there’s no clear answer from the start.
               </p>
               <p style={bodyText}>
-                Outside of tech, I also spend time on creative work like
-                graphic design, editing, and cinematography.
+                Outside of tech, I’m usually doing something creative like editing videos, designing, or obsessing over visuals for way too long.
               </p>
             </div>
           </div>

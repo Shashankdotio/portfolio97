@@ -14,7 +14,7 @@ export function HeroSection() {
           Shashank Kamble
         </h1>
         <p style={heroSubtitle}>
-          Building intelligent systems with data and code.
+            Making computers think a little harder than I do at 2am.
         </p>
       </div>
     </section>

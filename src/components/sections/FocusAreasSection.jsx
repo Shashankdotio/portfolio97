@@ -14,7 +14,7 @@ export function FocusAreasSection() {
   return (
     <section style={sectionTight}>
       <Reveal>
-        <h2 style={sectionTitle}>Focus Areas</h2>
+        <h2 style={sectionTitle}>My Toolkit</h2>
       </Reveal>
 
       <div style={skillsGrid}>

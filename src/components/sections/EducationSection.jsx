@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Reveal } from "../common/Reveal";
 import { HoverCard } from "../common/HoverCard";
 import { ExpandedEducationModal } from "./ExpandedEducationModal";
@@ -15,9 +15,12 @@ import {
   secondaryEducationCard,
   activeEducationCard,
   educationHint,
+  educationHintHand,
+  educationHintArrow,
+  educationHintSection,
 } from "../../styles/styles";
 
-function EducationCard({ edu, isActive, onSelect, showHint }) {
+function EducationCard({ edu, isActive, onSelect }) {
   const isSecondary = !edu.focus;
   const baseCardStyle = isSecondary ? secondaryEducationCard : timelineCard;
   const cardStyle = isActive
@@ -73,17 +76,11 @@ function EducationCard({ edu, isActive, onSelect, showHint }) {
               }}
               tabIndex={-1}
             >
-              Click to explore my journey
+              Click to open the full story
             </button>
           </HoverCard>
         </div>
 
-        {showHint && !isActive && (
-          <div style={educationHint}>
-            <span style={{ fontSize: "1rem" }}>☞</span>
-            <span>Click to expand and explore my journey</span>
-          </div>
-        )}
       </div>
     </Reveal>
   );
@@ -92,16 +89,6 @@ function EducationCard({ edu, isActive, onSelect, showHint }) {
 export function EducationSection() {
   const [selectedEducation, setSelectedEducation] = useState(null);
   const [showHint, setShowHint] = useState(true);
-
-  useEffect(() => {
-    const timeoutId = window.setTimeout(() => {
-      setShowHint(false);
-    }, 4500);
-
-    return () => {
-      window.clearTimeout(timeoutId);
-    };
-  }, []);
 
   const handleSelectEducation = (edu) => {
     setShowHint(false);
@@ -113,6 +100,15 @@ export function EducationSection() {
       <Reveal>
         <h2 style={sectionTitle}>Through the Years</h2>
       </Reveal>
+      {showHint && (
+        <div style={educationHintSection}>
+          <div style={educationHint}>
+            <span style={educationHintHand}>☞</span>
+            <span>Click a card to open the full story</span>
+            <span style={educationHintArrow}>↓</span>
+          </div>
+        </div>
+      )}
 
       <div style={educationLayout}>
         <div style={educationCardsColumn}>
@@ -124,7 +120,6 @@ export function EducationSection() {
                 edu={edu}
                 isActive={selectedEducation?.title === edu.title}
                 onSelect={handleSelectEducation}
-                showHint={showHint}
               />
             ))}
           </div>

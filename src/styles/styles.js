@@ -87,24 +87,35 @@ export const tiltImage = {
 
 /* ================= SKILLS STYLES ================= */
 export const skillsGrid = {
-  display: "grid",
-  gridTemplateColumns: isMobileLayout
-    ? "1fr"
-    : "repeat(auto-fit, minmax(280px, 1fr))",
+  display: "flex",
+  flexDirection: "column",
   gap: "2rem",
-  alignItems: "stretch",
+};
+
+export const skillsRow = {
+  display: "grid",
+  gridTemplateColumns: isMobileLayout ? "1fr" : "repeat(3, minmax(0, 1fr))",
+  gap: "2rem",
+  alignItems: "start",
 };
 
 export const skillCard = {
   background: "rgba(255,255,255,0.08)",
   borderRadius: "20px",
   padding: "2rem",
-  minHeight: "100%",
   display: "flex",
   flexDirection: "column",
+  width: "100%",
+  minWidth: 0,
+  height: "auto",
 };
 
-export const skillTitle = { fontSize: "1.35rem", marginBottom: "1rem" };
+export const skillTitle = {
+  fontSize: "1.35rem",
+  marginBottom: "1rem",
+  lineHeight: 1.2,
+  wordBreak: "normal",
+};
 
 export const skillList = {
   listStyle: "none",
@@ -115,6 +126,11 @@ export const skillList = {
   opacity: 0.85,
   display: "grid",
   gap: "0.55rem",
+};
+
+export const skillItem = {
+  paddingBottom: "0.35rem",
+  borderBottom: "1px solid rgba(255,255,255,0.08)",
 };
 
 /* ================= TIMELINE/EDUCATION STYLES ================= */
@@ -191,29 +207,50 @@ export const activeEducationCard = {
 };
 
 export const educationHint = {
-  position: "absolute",
-  left: isMobileLayout ? "0.25rem" : "calc(100% + 1rem)",
-  top: isMobileLayout ? "calc(100% + 0.75rem)" : "50%",
-  transform: isMobileLayout ? "none" : "translateY(-50%)",
+  position: "relative",
+  width: "fit-content",
+  margin: "1.1rem 0 1.2rem",
   display: "inline-flex",
   alignItems: "center",
-  gap: "0.45rem",
-  fontSize: "0.78rem",
-  opacity: 0,
+  gap: "0.65rem",
+  fontSize: "0.92rem",
+  opacity: 1,
   color: "rgba(255,255,255,0.86)",
   whiteSpace: "nowrap",
   pointerEvents: "none",
   animation: isMobileLayout
-    ? "educationHintFloatMobile 4.5s ease-in-out forwards"
-    : "educationHintFloat 4.5s ease-in-out forwards",
-  fontWeight: "500",
-  background: "rgba(255,255,255,0.1)",
-  border: "1px solid rgba(255,255,255,0.18)",
-  padding: "0.45rem 0.8rem",
-  borderRadius: "999px",
-  backdropFilter: "blur(10px)",
-  boxShadow: "0 10px 30px rgba(0,0,0,0.25)",
-  zIndex: 2,
+    ? "educationHintFloatMobile 1.8s ease-in-out infinite"
+    : "educationHintFloat 1.8s ease-in-out infinite",
+  fontWeight: "600",
+  background: "rgba(255,255,255,0.14)",
+  border: "1px solid rgba(255,255,255,0.28)",
+  padding: "0.7rem 1rem",
+  borderRadius: "18px",
+  backdropFilter: "blur(12px)",
+  boxShadow: "0 12px 32px rgba(0,0,0,0.28)",
+  zIndex: 3,
+};
+
+export const educationHintHand = {
+  fontSize: "1.35rem",
+  lineHeight: 1,
+  display: "inline-flex",
+  animation: "educationHintHand 1.2s ease-in-out infinite",
+};
+
+export const educationHintArrow = {
+  fontSize: "1.15rem",
+  lineHeight: 1,
+  opacity: 0.9,
+  display: "inline-flex",
+  animation: isMobileLayout
+    ? "educationHintArrowMobile 1.2s ease-in-out infinite"
+    : "educationHintArrow 1.2s ease-in-out infinite",
+};
+
+export const educationHintSection = {
+  display: "flex",
+  justifyContent: isMobileLayout ? "flex-start" : "flex-start",
 };
 
 /* ================= EXPANDED EDUCATION MODAL STYLES ================= */

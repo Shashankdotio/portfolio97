@@ -108,26 +108,26 @@
 @keyframes educationHintFloat {
   0% {
     opacity: 0;
-    transform: translateY(-50%) translateX(-10px);
+    transform: translateX(-6px) translateY(6px);
   }
   12% {
     opacity: 1;
-    transform: translateY(-50%) translateX(0);
+    transform: translateX(0) translateY(0);
   }
   78% {
     opacity: 1;
-    transform: translateY(-50%) translateX(6px);
+    transform: translateX(4px) translateY(0);
   }
   100% {
     opacity: 0;
-    transform: translateY(-50%) translateX(12px);
+    transform: translateX(10px) translateY(-4px);
   }
 }
 
 @keyframes educationHintFloatMobile {
   0% {
     opacity: 0;
-    transform: translateY(-6px);
+    transform: translateY(-8px);
   }
   12% {
     opacity: 1;
@@ -135,11 +135,42 @@
   }
   78% {
     opacity: 1;
-    transform: translateY(4px);
+    transform: translateY(6px);
   }
   100% {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(12px);
+  }
+}
+
+@keyframes educationHintHand {
+  0%, 100% {
+    transform: translateX(0) translateY(0) rotate(-8deg);
+  }
+  50% {
+    transform: translateX(-4px) translateY(1px) rotate(4deg);
+  }
+}
+
+@keyframes educationHintArrow {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 1;
+  }
+}
+
+@keyframes educationHintArrowMobile {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 1;
   }
 }
 
@@ -166,4 +197,3 @@
     transform: scale(0.3);
   }
 }
-

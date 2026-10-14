@@ -9,6 +9,7 @@ import {
   projectsGridAlt,
   projectCardAlt,
   projectDescAlt,
+  recentProjectCard,
 } from "../../styles/styles";
 
 export function ProjectsSection() {
@@ -58,6 +59,36 @@ export function ProjectsSection() {
           </Reveal>
         ))}
       </div>
+
+      <Reveal delay={0.5}>
+        <div style={recentProjectCard}>
+          <div>
+            <p style={{ fontSize: "0.8rem", opacity: 0.65, marginBottom: "0.35rem" }}>
+              A little something I built recently
+            </p>
+            <h3 style={{ fontSize: "1.15rem", margin: 0 }}>
+              {projectsData.recent.title}
+            </h3>
+            <p style={{ ...projectDescAlt, margin: "0.35rem 0 0" }}>
+              {projectsData.recent.desc}
+            </p>
+          </div>
+          <a
+            href={projectsData.recent.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              color: "white",
+              fontSize: "0.95rem",
+              opacity: 0.85,
+              textDecoration: "none",
+              whiteSpace: "nowrap",
+            }}
+          >
+            Check it out →
+          </a>
+        </div>
+      </Reveal>
 
       {/* VIEW MORE */}
       <Reveal delay={0.6}>

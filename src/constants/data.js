@@ -156,6 +156,11 @@ export const projectsData = {
       link: "https://github.com/Shashankdotio/Eye-Disease-Classification-AML",
     },
   ],
+  recent: {
+    title: "Cool ID Cards",
+    desc: "A playful little tool for creating your own custom ID card.",
+    link: "https://cool-id-cards.vercel.app",
+  },
 };
 
 export const certificationsData = [
@@ -264,7 +269,7 @@ export const contactData = {
     {
       label: "Resume",
       value: "Download PDF",
-      href: "/resume.pdf",
+      href: "/shashank%20kamble%20resume.pdf",
       delay: 0.35,
     },
     {

@@ -463,6 +463,21 @@ export const projectDescAlt = {
   opacity: 0.75,
 };
 
+export const recentProjectCard = {
+  maxWidth: "900px",
+  margin: "3rem auto 0",
+  padding: "1.5rem 2rem",
+  border: "1px solid rgba(255,255,255,0.12)",
+  borderRadius: "18px",
+  background: "rgba(255,255,255,0.035)",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+  gap: "1.5rem",
+  flexDirection: isMobile ? "column" : "row",
+  textAlign: isMobile ? "center" : "left",
+};
+
 /* ================= CONTACT STYLES ================= */
 export const contactLayout = {
   display: "grid",

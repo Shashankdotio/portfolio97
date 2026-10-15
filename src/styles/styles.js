@@ -213,28 +213,28 @@ export const educationHint = {
   display: "inline-flex",
   alignItems: "center",
   gap: "0.65rem",
-  fontSize: "0.92rem",
+  fontSize: "0.95rem",
   opacity: 1,
-  color: "rgba(255,255,255,0.86)",
-  whiteSpace: "nowrap",
+  color: "#102b40",
+  whiteSpace: "normal",
   pointerEvents: "none",
   animation: isMobileLayout
     ? "educationHintFloatMobile 1.8s ease-in-out infinite"
     : "educationHintFloat 1.8s ease-in-out infinite",
-  fontWeight: "600",
-  background: "rgba(255,255,255,0.14)",
-  border: "1px solid rgba(255,255,255,0.28)",
-  padding: "0.7rem 1rem",
-  borderRadius: "18px",
-  backdropFilter: "blur(12px)",
-  boxShadow: "0 12px 32px rgba(0,0,0,0.28)",
+  fontWeight: "700",
+  background: "linear-gradient(135deg, #ffffff, #d8f2ff)",
+  border: "1px solid rgba(74,194,255,0.9)",
+  padding: "0.8rem 1.1rem",
+  borderRadius: "16px",
+  boxShadow: "0 10px 30px rgba(0,0,0,0.35)",
   zIndex: 3,
 };
 
 export const educationHintHand = {
-  fontSize: "1.35rem",
+  fontSize: "1.45rem",
   lineHeight: 1,
   display: "inline-flex",
+  color: "#127ce5",
   animation: "educationHintHand 1.2s ease-in-out infinite",
 };
 

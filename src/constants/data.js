@@ -144,6 +144,8 @@ export const projectsData = {
       title: "LLM Therapist Evaluation",
       desc: "Evaluation framework for analyzing behavioral responses and limitations of large language models.",
       link: "https://github.com/Shashankdotio/llm-therapist-evaluation-",
+      publication:
+        "https://drive.google.com/file/d/1nwxOSUN3Z3dAHrnFL85cLd08_jNLkcqB/view",
     },
     {
       title: "VeriNews",

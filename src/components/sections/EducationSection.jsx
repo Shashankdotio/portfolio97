@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Reveal } from "../common/Reveal";
 import { HoverCard } from "../common/HoverCard";
 import { ExpandedEducationModal } from "./ExpandedEducationModal";
@@ -38,7 +38,6 @@ function EducationCard({ edu, isActive, onSelect }) {
         <div
           onClick={() => onSelect(edu)}
           style={{
-            background: "transparent",
             color: "inherit",
             cursor: "pointer",
             textAlign: "left",
@@ -66,17 +65,19 @@ function EducationCard({ edu, isActive, onSelect }) {
                 appearance: "none",
                 background: "transparent",
                 border: 0,
-                color: "inherit",
+                color: "white",
                 cursor: "pointer",
-                fontSize: "0.8rem",
-                opacity: 0.5,
+                fontSize: "0.85rem",
+                fontWeight: 600,
+                opacity: 0.95,
                 marginTop: "1rem",
-                padding: 0,
-                fontStyle: "italic",
+                padding: "0.45rem 0.7rem",
+                borderRadius: "999px",
+                fontStyle: "normal",
               }}
               tabIndex={-1}
             >
-              Click to open the full story
+              Explore story →
             </button>
           </HoverCard>
         </div>
@@ -89,6 +90,18 @@ function EducationCard({ edu, isActive, onSelect }) {
 export function EducationSection() {
   const [selectedEducation, setSelectedEducation] = useState(null);
   const [showHint, setShowHint] = useState(true);
+  const educationDetailRef = useRef(null);
+
+  useEffect(() => {
+    if (!selectedEducation || window.innerWidth >= 900) return;
+
+    educationDetailRef.current?.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "auto"
+        : "smooth",
+      block: "start",
+    });
+  }, [selectedEducation]);
 
   const handleSelectEducation = (edu) => {
     setShowHint(false);
@@ -104,7 +117,7 @@ export function EducationSection() {
         <div style={educationHintSection}>
           <div style={educationHint}>
             <span style={educationHintHand}>☞</span>
-            <span>Click a card to open the full story</span>
+            <span>Tap any card to explore my story</span>
             <span style={educationHintArrow}>↓</span>
           </div>
         </div>
@@ -125,7 +138,10 @@ export function EducationSection() {
           </div>
         </div>
 
-        <div style={educationDetailColumn}>
+        <div
+          ref={educationDetailRef}
+          style={{ ...educationDetailColumn, scrollMarginTop: "1.5rem" }}
+        >
           {selectedEducation && (
             <ExpandedEducationModal
               education={selectedEducation}

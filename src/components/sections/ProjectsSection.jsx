@@ -40,22 +40,61 @@ export function ProjectsSection() {
       <div style={projectsGridAlt}>
         {projectsData.projects.map((proj, i) => (
           <Reveal key={proj.title} delay={0.2 + i * 0.1}>
-            <a
-              href={proj.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                textDecoration: "none",
-                color: "inherit",
-                display: "block",
-                height: "100%",
-              }}
-            >
+            {proj.publication ? (
               <HoverCard style={projectCardAlt}>
                 <h4 style={{ marginBottom: "0.4rem" }}>{proj.title}</h4>
                 <p style={projectDescAlt}>{proj.desc}</p>
+                <div
+                  style={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: "1.25rem",
+                    marginTop: "auto",
+                    paddingTop: "1.25rem",
+                  }}
+                >
+                  <a
+                    href={proj.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      color: "white",
+                      textUnderlineOffset: "4px",
+                    }}
+                  >
+                    View project ↗
+                  </a>
+                  <a
+                    href={proj.publication}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      color: "white",
+                      textUnderlineOffset: "4px",
+                    }}
+                  >
+                    Read publication ↗
+                  </a>
+                </div>
               </HoverCard>
-            </a>
+            ) : (
+              <a
+                href={proj.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                  display: "block",
+                  height: "100%",
+                }}
+              >
+                <HoverCard style={projectCardAlt}>
+                  <h4 style={{ marginBottom: "0.4rem" }}>{proj.title}</h4>
+                  <p style={projectDescAlt}>{proj.desc}</p>
+                </HoverCard>
+              </a>
+            )}
           </Reveal>
         ))}
       </div>

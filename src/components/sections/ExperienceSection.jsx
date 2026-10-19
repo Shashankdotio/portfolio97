@@ -5,12 +5,32 @@ import { experienceData } from "../../constants/data";
 import {
   sectionTight,
   sectionTitle,
-  featuredExperienceCard,
+  currentExperienceGrid,
+  currentExperienceCard,
+  experienceLogo,
   experienceList,
   viewMoreButton,
   secondaryExperienceGrid,
   secondaryExperienceCard,
 } from "../../styles/styles";
+
+function CurrentExperienceItem({ exp, delay }) {
+  return (
+    <Reveal delay={delay}>
+      <HoverCard style={currentExperienceCard}>
+        <img src={exp.logo} alt={`${exp.org} logo`} style={experienceLogo} />
+        <h3>{exp.title}</h3>
+        <p style={{ opacity: 0.85 }}>{exp.org}</p>
+        <p style={{ fontSize: "0.9rem", opacity: 0.6 }}>{exp.period}</p>
+        <ul style={experienceList}>
+          {exp.items.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </HoverCard>
+    </Reveal>
+  );
+}
 
 function SecondaryExperienceItem({ exp, delay }) {
   return (
@@ -46,24 +66,13 @@ export function ExperienceSection() {
         <h2 style={sectionTitle}>Work Journey</h2>
       </Reveal>
 
-      {/* FEATURED EXPERIENCE */}
-      <Reveal delay={0.1}>
-        <HoverCard style={featuredExperienceCard}>
-          <h3>{experienceData.featured.title}</h3>
-          <p style={{ opacity: 0.85 }}>{experienceData.featured.org}</p>
-          <p style={{ fontSize: "0.9rem", opacity: 0.6 }}>
-            {experienceData.featured.period}
-          </p>
-          <ul style={experienceList}>
-            {experienceData.featured.items.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </HoverCard>
-      </Reveal>
+      <div style={currentExperienceGrid}>
+        <CurrentExperienceItem exp={experienceData.current} delay={0.1} />
+        <CurrentExperienceItem exp={experienceData.featured} delay={0.2} />
+      </div>
 
       {/* VIEW MORE BUTTON */}
-      <Reveal delay={0.2}>
+      <Reveal delay={0.3}>
         <button
           onClick={() => setShowMore(!showMore)}
           style={viewMoreButton}

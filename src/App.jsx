@@ -14,7 +14,7 @@ import { isMobile } from "./constants/config";
 
 export default function App() {
   const [scrollY, setScrollY] = useState(0);
-  const smoothScroll = useRef(0);
+  const smoothScrollRef = useRef(0);
 
   useEffect(() => {
     const onScroll = () => setScrollY(window.scrollY);
@@ -45,7 +45,7 @@ export default function App() {
           position={[-4, -2, -6]}
           intensity={isMobile ? 0.6 : 0.5}
         />
-        <HeroObject scrollY={scrollY} smoothScroll={smoothScroll} />
+        <HeroObject scrollY={scrollY} smoothScrollRef={smoothScrollRef} />
       </Canvas>
 
       {/* CONTENT */}

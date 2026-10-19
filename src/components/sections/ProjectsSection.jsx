@@ -100,7 +100,7 @@ export function ProjectsSection() {
       </div>
 
       <Reveal delay={0.5}>
-        <div style={recentProjectCard}>
+        <HoverCard style={recentProjectCard}>
           <div>
             <p style={{ fontSize: "0.8rem", opacity: 0.65, marginBottom: "0.35rem" }}>
               A little something I built recently
@@ -126,7 +126,7 @@ export function ProjectsSection() {
           >
             Check it out →
           </a>
-        </div>
+        </HoverCard>
       </Reveal>
 
       {/* VIEW MORE */}

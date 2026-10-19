@@ -101,13 +101,25 @@ export const educationData = [
 export const experienceData = {
   featured: {
     title: "Research & Programming Intern",
-    org: "R&D · Government of India (AIR)",
+    org: "All India Radio (AIR) · Government of India",
     period: "Summer 2024",
+    logo: "/logos/AIR.png",
     items: [
       "Analyzed broadcast and audience datasets to identify listener engagement and programming trends using Python and Excel.",
       "Performed data cleaning, preprocessing, and exploratory analysis on structured operational datasets.",
       "Built reporting workflows and dashboards to summarize audience insights and programming metrics.",
       "Processed broadcast metadata and operational records to support scheduling and content analysis.",
+    ],
+  },
+  current: {
+    title: "Supply Chain & Workforce Analytics",
+    org: "Moxie Salon & Beauty Bar · Academic Client Engagement, Rutgers Business School Analytics Practicum",
+    period: "Fall 2026 – Present",
+    logo: "/logos/moxie.png",
+    items: [
+      "Integrating POS, payroll, and accounting data across three salon locations to establish unified financial and operational KPIs.",
+      "Analyzing labor costs, employee utilization, revenue per labor hour, and customer walk-in patterns to identify staffing inefficiencies.",
+      "Developing demand forecasting and workforce planning models to improve scheduling efficiency and financial performance.",
     ],
   },
   secondary: [

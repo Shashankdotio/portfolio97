@@ -356,21 +356,42 @@ export const expandedModalMemory = {
 };
 
 /* ================= EXPERIENCE STYLES ================= */
-export const featuredExperienceCard = {
-  maxWidth: "800px",
+export const currentExperienceGrid = {
+  width: isMobileLayout ? "100%" : "calc(100% + 12vw)",
+  maxWidth: "1280px",
   margin: "4rem auto 2rem",
+  display: "grid",
+  gridTemplateColumns: isMobileLayout ? "1fr" : "repeat(2, minmax(0, 1fr))",
+  gridAutoRows: "1fr",
+  gap: "2rem",
+  alignItems: "stretch",
+};
+
+export const currentExperienceCard = {
+  width: "100%",
+  height: "100%",
+  boxSizing: "border-box",
   background: "rgba(255,255,255,0.08)",
-  borderRadius: "24px",
+  borderRadius: "20px",
   padding: "2rem",
-  minHeight: "320px",
   display: "flex",
   flexDirection: "column",
 };
 
+export const experienceLogo = {
+  width: "100%",
+  height: "56px",
+  objectFit: "contain",
+  objectPosition: "left center",
+  marginBottom: "1rem",
+};
+
 export const experienceList = {
-  marginTop: "2rem",
+  marginTop: "1.25rem",
   lineHeight: 1.8,
   opacity: 0.85,
+  paddingLeft: "1.1rem",
+  flex: 1,
 };
 
 export const viewMoreButton = {
